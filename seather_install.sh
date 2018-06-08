@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.seather'
 COIN_DAEMON='seatherd'
 COIN_CLI='seather-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/SeatherDEV/Seather/releases/download/v1.0.0.1/seather-1.0.0-x86_64-linux.tar.gz'
+COIN_TGZ='https://github.com/Seather/Seather/releases/download/v1.0/linux64.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Seather'
 COIN_PORT=22500
@@ -25,7 +25,7 @@ function download_node() {
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
-  tar xvzf $COIN_ZIP --strip 2 -C $COIN_PATH >/dev/null 2>&1
+  tar xvzf $COIN_ZIP --strip 1 -C $COIN_PATH >/dev/null 2>&1
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
